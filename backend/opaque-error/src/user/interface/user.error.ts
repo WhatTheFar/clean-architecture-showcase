@@ -1,0 +1,7 @@
+export enum UserErrorCode {
+  DUPLICATE_USERNAME = 1001,
+  INVALID_USERNAME = 1002,
+  INVALID_PASSWORD = 1003,
+
+  UNKNOWN = 0,
+}
