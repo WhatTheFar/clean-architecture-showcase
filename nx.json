@@ -15,5 +15,8 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "nest-opaque-error": { "tags": [] } }
+  "projects": {
+    "nest-opaque-error": { "tags": [] },
+    "vue-vite-ts": { "tags": [] }
+  }
 }
