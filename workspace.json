@@ -1,7 +1,68 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "nest-opaque-error": {
+      "root": "apps/nest-opaque-error",
+      "sourceRoot": "apps/nest-opaque-error/src",
+      "projectType": "application",
+      "prefix": "nest-opaque-error",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/nest-opaque-error",
+            "main": "apps/nest-opaque-error/src/main.ts",
+            "tsConfig": "apps/nest-opaque-error/tsconfig.app.json",
+            "assets": [
+              "apps/nest-opaque-error/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/nest-opaque-error/src/environments/environment.ts",
+                  "with": "apps/nest-opaque-error/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "nest-opaque-error:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nest-opaque-error/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/nest-opaque-error"
+          ],
+          "options": {
+            "jestConfig": "apps/nest-opaque-error/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/nest"
-  }
+  },
+  "defaultProject": "nest-opaque-error"
 }
