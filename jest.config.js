@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/nest-opaque-error', '<rootDir>/apps/vue-vite-ts'],
+  projects: [
+    '<rootDir>/apps/nest-opaque-error',
+    '<rootDir>/apps/vue-vite-ts',
+    '<rootDir>/libs/terminology',
+  ],
 };

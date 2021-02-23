@@ -68,9 +68,7 @@
         },
         "serve": {
           "executor": "@nrwl/workspace:run-commands",
-          "options": {
-            "command": "npx vite apps/vue-vite-ts"
-          }
+          "options": { "command": "npx vite apps/vue-vite-ts" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -85,8 +83,27 @@
           }
         }
       }
+    },
+    "terminology": {
+      "root": "libs/terminology",
+      "sourceRoot": "libs/terminology/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/terminology/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/terminology"],
+          "options": {
+            "jestConfig": "libs/terminology/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
-  "cli": { "defaultCollection": "@nrwl/nest" },
-  "defaultProject": "nest-opaque-error"
+  "cli": { "defaultCollection": "@nrwl/workspace" },
+  "defaultProject": "terminology"
 }

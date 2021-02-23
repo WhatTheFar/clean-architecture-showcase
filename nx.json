@@ -17,6 +17,7 @@
   },
   "projects": {
     "nest-opaque-error": { "tags": [] },
-    "vue-vite-ts": { "tags": [] }
+    "vue-vite-ts": { "tags": [] },
+    "terminology": { "tags": [] }
   }
 }
