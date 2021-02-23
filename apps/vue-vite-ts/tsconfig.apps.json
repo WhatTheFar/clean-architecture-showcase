@@ -2,7 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": []
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "/@/*": ["src/*"]
+    },
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }]
   },
   "include": ["**/*.ts"],
   "exclude": ["**/*.spec.ts"]

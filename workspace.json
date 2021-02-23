@@ -53,6 +53,25 @@
       "sourceRoot": "apps/vue-vite-ts/src",
       "projectType": "application",
       "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": ["dist/apps/vue-vite-ts"],
+          "options": {
+            "commands": [
+              "npx vite build apps/vue-vite-ts --outDir dist/apps/vue-vite-ts",
+              "rm -rf dist/apps/vue-vite-ts",
+              "cp -r apps/vue-vite-ts/dist/* dist",
+              "rm -rf apps/vue-vite-ts/dist"
+            ],
+            "parallel": false
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "npx vite apps/vue-vite-ts"
+          }
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": { "lintFilePatterns": ["apps/vue-vite-ts/**/*.ts"] }
