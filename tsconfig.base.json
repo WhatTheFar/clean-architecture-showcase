@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@clean-arch/terminology": ["libs/terminology/src/index.ts"]
-    }
+    },
+    "strict": true
   },
   "exclude": ["node_modules", "tmp"]
 }
